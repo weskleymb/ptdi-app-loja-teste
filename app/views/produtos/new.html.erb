@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div class="container">
+    <%= form_for Produto.new do | formulario | %>
+      <div class="form-group">
+        <%= formulario.label :nome, "Nome" %>
+        <%= formulario.text_field :nome, class:"form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= formulario.label :descricao, "Descrição" %>
+        <%= formulario.text_area :descricao, rows:5, class:"form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= formulario.label :preco %>
+        <%= formulario.number_field :preco, step:0.01, class:"form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= formulario.label :quantidade %>
+        <%= formulario.number_field :quantidade, step:1, class:"form-control" %>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <button class="btn btn-primary btn-block" type="submit">
+            <i class="fas fa-save"></i> Criar
+          </button>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-danger btn-block" type="reset">
+            <i class="fas fa-ban"></i> Limpar
+          </button>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</body>
+</html>
